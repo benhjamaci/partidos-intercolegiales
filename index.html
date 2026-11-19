@@ -1,0 +1,70 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Partidos Intercolegiales</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <h1>Partidos Intercolegiales</h1>
+        <p>Gestión de encuentros deportivos</p>
+    </header>
+
+    <main>
+
+        <section>
+            <h2>Registrar partido</h2>
+
+            <form id="formPartido">
+
+                <label>Disciplina:</label>
+                <select id="disciplina" required>
+                    <option value="">Seleccionar</option>
+                    <option value="Futsal">Futsal</option>
+                    <option value="Vóley">Vóley</option>
+                </select>
+
+                <label>Equipo local:</label>
+                <input type="text" id="equipo_local" required>
+
+                <label>Equipo visitante:</label>
+                <input type="text" id="equipo_visitante" required>
+
+                <label>Fecha:</label>
+                <input type="date" id="fecha" required>
+
+                <label>Hora:</label>
+                <input type="time" id="hora" required>
+
+                <button type="submit">Guardar partido</button>
+
+            </form>
+        </section>
+
+        <section>
+            <h2>Partidos registrados</h2>
+
+            <label>Filtrar por disciplina:</label>
+            <select id="filtro">
+                <option value="">Todas</option>
+                <option value="Futsal">Futsal</option>
+                <option value="Vóley">Vóley</option>
+            </select>
+
+            <div id="listaPartidos">
+                <p>Los partidos aparecerán aquí.</p>
+            </div>
+
+        </section>
+
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="script.js"></script>
+    
+</body>
+</html>

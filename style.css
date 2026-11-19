@@ -1,0 +1,251 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800;900&family=DM+Sans:wght@400;500;600;700&display=swap');
+
+:root {
+    --background: #111410;
+    --surface: #1c211a;
+    --surface-light: #252c22;
+    --lime: #d6ff42;
+    --white: #f4f0e6;
+    --muted: #9da594;
+    --border: #394132;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: var(--background);
+    color: var(--white);
+    font-family: 'DM Sans', sans-serif;
+    min-height: 100vh;
+}
+
+/* encabezado */
+
+header {
+    padding: 38px 8%;
+    border-bottom: 1px solid var(--border);
+    background: var(--background);
+    position: relative;
+}
+
+header::after {
+    content: '';
+    display: block;
+    width: 55px;
+    height: 4px;
+    background: var(--lime);
+    margin-top: 20px;
+}
+
+header h1 {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: clamp(38px, 7vw, 70px);
+    font-weight: 900;
+    letter-spacing: -2px;
+    line-height: 1;
+    color: var(--white);
+    text-transform: lowercase;
+}
+
+header p {
+    color: var(--muted);
+    font-size: 11px;
+    letter-spacing: 3px;
+    margin-top: 12px;
+    text-transform: lowercase;
+}
+
+/* contenido */
+
+main {
+    width: 88%;
+    max-width: 1200px;
+    margin: 50px auto;
+}
+
+/* secciones */
+
+section {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    padding: 30px;
+    margin-bottom: 25px;
+    border-radius: 5px;
+}
+
+h2 {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 32px;
+    font-weight: 800;
+    color: var(--lime);
+    margin-bottom: 25px;
+    text-transform: lowercase;
+}
+
+/* formularios */
+
+form {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+}
+
+input,
+select,
+textarea {
+    width: 100%;
+    background: #131711;
+    color: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 3px;
+    padding: 15px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 14px;
+    transition: .2s;
+}
+
+input::placeholder,
+textarea::placeholder {
+    color: #828b78;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    outline: none;
+    border-color: var(--lime);
+    box-shadow: 0 0 0 2px #d6ff4220;
+}
+
+/* botones */
+
+button {
+    background: var(--lime);
+    color: #111410;
+    border: none;
+    padding: 13px 22px;
+    border-radius: 3px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 12px;
+    font-weight: 800;
+    cursor: pointer;
+    transition: .2s;
+    text-transform: lowercase;
+}
+
+button:hover {
+    background: var(--white);
+    transform: translateY(-2px);
+}
+
+button:active {
+    transform: scale(.97);
+}
+
+/* filtros */
+
+#filtro,
+.filtros {
+    margin: 15px 0;
+}
+
+/* lista de partidos */
+
+#listaPartidos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 18px;
+}
+
+/* tarjetas */
+
+.partido,
+.card {
+    background: var(--surface-light);
+    border: 1px solid var(--border);
+    border-left: 4px solid var(--lime);
+    padding: 23px;
+    border-radius: 4px;
+    transition: .25s;
+}
+
+.partido:hover,
+.card:hover {
+    transform: translateY(-4px);
+    border-color: var(--lime);
+}
+
+.partido h3,
+.card h3 {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 27px;
+    font-weight: 800;
+    color: var(--white);
+    margin-bottom: 15px;
+    text-transform: lowercase;
+}
+
+.partido p,
+.card p {
+    color: var(--muted);
+    font-size: 13px;
+    margin: 9px 0;
+}
+
+/* acciones */
+
+.partido button,
+.card button {
+    margin-top: 12px;
+    margin-right: 5px;
+}
+
+button.eliminar {
+    background: #e45c4d;
+    color: white;
+}
+
+button.eliminar:hover {
+    background: #bd4034;
+}
+
+/* pie de página */
+
+footer {
+    border-top: 1px solid var(--border);
+    text-align: center;
+    padding: 30px;
+    color: var(--muted);
+    font-size: 11px;
+    letter-spacing: 2px;
+}
+
+/* adaptación a celulares */
+
+@media (max-width: 650px) {
+    header {
+        padding: 28px 6%;
+    }
+
+    main {
+        width: 94%;
+        margin: 25px auto;
+    }
+
+    section {
+        padding: 20px;
+    }
+
+    form {
+        grid-template-columns: 1fr;
+    }
+
+    #listaPartidos {
+        grid-template-columns: 1fr;
+    }
+}
